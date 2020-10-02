@@ -1,6 +1,6 @@
 # Predict Viewer Satisfaction of a New Movie
-Chenyu Dai, Shuge Fan, Haodong Jin, Ziyao Ren \\
-Fall 2020 CS 4641 Machine Learning: Group Project \\
+Chenyu Dai, Shuge Fan, Haodong Jin, Ziyao Ren  <br />
+Fall 2020 CS 4641 Machine Learning: Group Project  <br />
 Georgia Tech
 
 ## Summary Figure
