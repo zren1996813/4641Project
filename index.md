@@ -4,7 +4,7 @@ Fall 2020 CS 4641 Machine Learning: Group Project  <br />
 Georgia Tech
 
 ## Summary Figure
-https://github.com/zren1996813/4641Project/blob/gh-pages/infographic.png
+<img src="infographioc.png"></img>
 ## Introduction/Background
 The goal of this project is to predict the viewer satisfaction of a new movie based on its known features, such as its company, director, star, genre, budget, releasing date, runtime, etc. People tend to analyze the movie by predicting their profits. However, we believe that a good movie is not judged by the profit but rather by its public praise. As a result, we approach this dataset from a different perspective, estimating the score it will get from the public audience. The investing companies might not be interested in our project, but the directors and producers who would like to make a movie with a good reputation or even a movie that is considered as a great art piece will definitely be interested in our project. 
 
