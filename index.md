@@ -35,9 +35,9 @@ We prefer to predict the score of 4.5 to 10, and each cluster represents a 0.1 s
 In order to see the diagram clearly, we decrease the range to (2,9). Apparently, The optimal cluster should be 6 which is the arm of the diagram.<br />
 <img src="kmean-2.png" width = "650cm"><br />
 However, when we compute the silhouette score between 3 to 20, the score is always below 0.03 and even turns to negative values. 
-<img src="kmean-3.png" width = "650cm"><br />
+<img src="kmean-3.png" width = "800cm"><br />
 Because 6 is the optimal cluster, we visualize the silhouette score between 4 to 8. 
-<img src="kmeans4.png" width = "650cm"><br />
+<img src="kmeans4.png" width = "700cm"><br />
 The silhouette score is always below 0. Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
 <img src="kmeans-5.png" width = "1000cm"><br />
 We apply the optimal cluster 6 into the diagram. Unlucky, there are many clusters overlapped, the center of the clusters is pretty close to each other. In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
