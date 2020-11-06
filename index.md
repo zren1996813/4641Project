@@ -25,10 +25,9 @@ Now we notice that there are several categorical features in our dataset, and th
 Since there are 7772 features in our dataset and there are some features that potentially are correlated, we decide to further process our data by doing feature reduction using correlation. We calculate the correlation between the features, and apply a threshold of 0.7. Whenever there are two features that have a correlation higher than 0.7, we delete one of the features from the dataset. After feature reduction, we reduce the number of features from 7772 to 4461.
 #### Step 2. PCA
 To apply the PCA algorithm, the first thing we want to do is to standardize the data to the same scale because some columns have bigger numbers, like the budget and gross earning columns. Those numbers are in the millions, while other columns are represented by binary numbers like 0 or 1. After data standardization, we run the PCA algorithm and transform the data into fewer dimensions. We chose the first 1985 principal components because they represent a total of about 70% of the cumulative variance explained, and each component has a variance bigger than 1. So we reduced the number of features from 4461 to 1985. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:<br />
-<img src="pca-1.png" width = "650cm"  margin-left= "auto"
-  margin-right="auto"><br />
-<img src="pca-2.png" width = "650cm"><br />
-<img src="pca-3.png" width = "650cm"><br />
+<img src="pca-1.png" width = "650cm" height = "500cm"><br />
+<img src="pca-2.png" width = "650cm" height = "500cm"><br />
+<img src="pca-3.png" width = "650cm" height = "500cm"><br />
 
 ### K-Means:
 We prefer to predict the score of 4.5 to 10, and each cluster represents a 0.1 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 6. <br />
