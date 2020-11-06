@@ -1,7 +1,16 @@
 # Summary Figure
 <img src="infographic.png"><br />
 # Introduction/Background
-This project aims to predict the viewer satisfaction of a new movie based on its available features, such as its company, director, star, genre, budget, releasing date, runtime, etc. People tend to analyze the movie by predicting their profits. However, we believe that a good film is not judged by the profit but rather by its public praise. As a result, we approach this dataset from a different perspective, estimating the score it will get from the public audience. The investing companies might not be interested in our project. Still, the directors and producers who would like to make a movie with a good reputation or even a film considered a great art piece would definitely be interested in our project. 
+The score of movies is a popular method for the audience to understand the overall quality of movies and for critics to determine whether a movie is worth recommending. With the data set found from Kaggle, this project aims to identify features of a movie that strongly correlate with its score and train the model to predict the score based on the features of a given movie. This topic is interesting and useful because we want to help producers to increase the influence of their movies just by improving the important aspects and ignoring the unrelated features. 
+
+With the techniques and knowledge we learned from the class so far, including data processing and unsupervised learning, we dived into the dataset and applied several tactics hoping to find some informative results by doing correlation and PCA analysis. Then, we applied two different clustering algorithms on the transformed dataset to see if movies can be categorized based on the features available. Our goal is to build a prediction algorithm that can output the range of scores that a movie would be rated at to give the producers estimate the success of their movies before releasing.
+
+We did the following steps by midterm:
+
+1. Understand the features through correlation analysis
+2. Preprocess the data by reducing the number of columns with PCA
+3. Apply K-means and GMM to visualize the categories of movies
+
 
 # Methods
 For the dataset, we found the original dataset from Kaggle (here is the [original source](https://www.kaggle.com/danielgrijalvas/movies)). In this dataset, there are over 6,800 data points and 14 features. However, not all data points can be used. We have to delete movies that don’t have all 14 features during the data preprocessing stage, and those whose budget is 0 because they would affect our model accuracy. We also realized that we could not utilize all 14 features because some of them might not relate to our result (viewer satisfaction). We’ll also separate those data into two parts: training purposes and the other for testing purposes.
