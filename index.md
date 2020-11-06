@@ -13,17 +13,45 @@ We did the following steps by midterm:
 
 
 # Methods
-For the dataset, we found the original dataset from Kaggle (here is the [original source](https://www.kaggle.com/danielgrijalvas/movies)). In this dataset, there are over 6,800 data points and 14 features. However, not all data points can be used. We have to delete movies that don’t have all 14 features during the data preprocessing stage, and those whose budget is 0 because they would affect our model accuracy. We also realized that we could not utilize all 14 features because some of them might not relate to our result (viewer satisfaction). We’ll also separate those data into two parts: training purposes and the other for testing purposes.
+### Data Preprocessing:
 
-We will apply both supervised learning and unsupervised learning algorithms to achieve the goal of this project. Firstly, we will try to use the correlation matrix and principal component analysis to reduce those irrelevant features. After that, we will conduct the clustering analysis using K-Means and Gaussian Mixture Modelling algorithm to further identify and remove the outliers before training on a sensitive supervised model. We will choose one algorithm from the Decision Tree, Neural Networks, Linear Regression, and Gradient Boosting Tree for supervised learning. We will find the accuracy for each of them based on our current data and pick the one with the highest accuracy as our prediction model.
+The set of data we are using contains 14 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy. After the first step, we have a set of data with 14 features and 4635 data points. 
+
+Now we notice that there are several categorical features in our dataset, and they are hard to comply with, so we decide to expand categorical features into multiple boolean features. For example, the feature “country” with different values like “U.S, France” is separated into several new boolean features representing if the movie is made in the U.S or if the movie is made in France. With this kind of replacement of features from categorical features to boolean features, we expand our dataset from 14 features to 7772 features.
+
+### Feature Reduction:
+
+#### Step 1.
+Since there are 7772 features in our dataset and there are some features that potentially are correlated, we decide to further process our data by doing feature reduction using correlation. We calculate the correlation between the features, and apply a threshold of 0.7. Whenever there are two features that have a correlation higher than 0.7, we delete one of the features from the dataset. After feature reduction, we reduce the number of features from 7772 to 4461.
+#### Step 2. PCA
+To apply the PCA algorithm, the first thing we want to do is to standardize the data to the same scale because some columns have bigger numbers, like the budget and gross earning columns. Those numbers are in the millions, while other columns are represented by binary numbers like 0 or 1. After data standardization, we run the PCA algorithm and transform the data into fewer dimensions. We chose the first 1985 principal components because they represent a total of about 70% of the cumulative variance explained, and each component has a variance bigger than 1. So we reduced the number of features from 4461 to 1985. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:
+<img src="pca-1.png"><br />
+<img src="pca-2.png"><br />
+<img src="pca-3.png"><br />
+
+### K-Means:
+We prefer to predict the score of 4.5 to 10, and each cluster represents a 0.1 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 6. 
+<img src="kmean-1.png"><br />
+In order to see the diagram clearly, we decrease the range to (2,9). Apparently, The optimal cluster should be 6 which is the arm of the diagram.
+<img src="kmean-2.png"><br />
+However, when we compute the silhouette score between 3 to 20, the score is always below 0.03 and even turns to negative values. 
+<img src="kmean-3.png"><br />
+Because 6 is the optimal cluster, we visualize the silhouette score between 4 to 8. 
+<img src="kmean-4.png"><br />
+The silhouette score is always below 0. Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
+<img src="kmean-5.png"><br />
+We apply the optimal cluster 6 into the diagram. Unlucky, there are many clusters overlapped, the center of the clusters is pretty close to each other. In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
+
+### GMM:
+At last we applied Gaussian Mixture Models to cluster our principal components. Since the score variable that we are trying to predict lies between 4.5 to 10, we decided to evaluate the performance of GMM from 20 to 55 clusters. We hope that each of the 55 clusters would capture 0.1 range of the score. We determined that the best number of clusters would be 35, which is the joint lowest point of both Akaike information criterion and bayes information criterion.
+<img src="gmm-1.png"><br />
+However, when we compute the silhouette scores from 20 to 55 clusters, all of them are less than 0.03, which means that there are overlapping clusters and even wrong assignments in some cases. So we decided GMM does not perform well in predicting scores of movies. And unsupervised learning cannot cluster well due to high dimensionality of our data. 
+<img src="gmm-2.png"><br />
 
 # Results
-At the end of this project, we want to build a model that can predict a new movie's score, given some of its features with at least 80% accuracy. To test our model, we will use two sets of data. One set is from our testing dataset, which we separated from the original dataset. The other set consists of recent films that are not in our dataset (meaning that they are released recently) to check if our model can accurately predict the score. 
 
 # Discussion
-Since we want to utilize both supervised learning and unsupervised learning, these two outcomes may be slightly different or colossal different. Thus, we have to choose the optimal one to represent our final answer by constructing a confusion matrix and tuning hyper-parameters to yield the best results. We understand that fewer data points would lead to less accuracy, thus we need to recalculate and rerun the program to get more data to ensure the prediction is more accurate. We believe this model would be able to apply to the market. As we all know, the movie companies' original motivation is to produce movies that can increase the audience's happiness while earning some profits. If they successfully predict the audience's satisfaction with the film in advance, their films will better cater to the viewer's tastes, leading to more profits.
-
-This dataset collects movies from 1986 to 2016. In the future, we want to gather more information about films that are the most recent because the viewer's tastes vary over time. Also, we want to categorize viewers based on their age, gender, or other features to analyze movies that cater to the tastes of different groups of viewers. 
+ 
 
 # References
 1. Muhammad Hassan Latif, Hammad Afzal, “Prediction of Movies popularity Using Machine Learning Techniques”, IJCSNS International Journal of Computer Science and Network Security, VOL.16 No.8, August 2016 <br />
