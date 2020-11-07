@@ -11,20 +11,34 @@ We did the following steps by midterm:
 2. Preprocess the data by reducing the number of columns with PCA
 3. Apply K-means and GMM to visualize the categories of movies
 
-
 # Methods
 ### Data Preprocessing:
 
-The set of data we are using contains 14 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy. After the first step, we have a set of data with 14 features and 4635 data points. 
+The set of data we are using contains 14 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy.
 
-Now we notice that there are several categorical features in our dataset, and they are hard to comply with, so we decide to expand categorical features into multiple boolean features. For example, the feature “country” with different values like “U.S, France” is separated into several new boolean features representing if the movie is made in the U.S or if the movie is made in France. With this kind of replacement of features from categorical features to boolean features, we expand our dataset from 14 features to 7772 features.
+We also notice that there are several categorical features in our dataset, and they are hard to comply with, so we decide to expand categorical features into multiple boolean features. For example, the feature “country” with different values like “U.S, France” is separated into several new boolean features representing if the movie is made in the U.S or if the movie is made in France. 
+
+### Feature Reduction with matrix correlation and PCA:
+
+To apply matrix correlation to the dataset, we need to compute the correlations among each feature, and set a threshold to delete those features which have a high correlation with other features. We decide to use a threshold of 0.7.
+
+To apply the PCA algorithm, the first thing we want to do is to standardize the data to the same scale because some columns have bigger numbers, like the budget and gross earning columns. Those numbers are in the millions, while other columns are represented by binary numbers like 0 or 1. After data standardization, we run the PCA algorithm and transform the data into fewer dimensions.  
+
+### K-Means and GMM:
+
+We also want to apply K-Means algorithm and GMM algorithm to do our unsupervised learning by using the data processed by matrix correlation and PCA.
+
+# Results
+### Data Preprocessing:
+
+After deleting the data points with 0 budget or 0 gross, we have a set of data with 14 features and 4635 data points. After the replacement of features from categorical features to boolean features, we expand our dataset from 14 features to 7772 features.
 
 ### Feature Reduction:
 
-#### Step 1.
-Since there are 7772 features in our dataset and there are some features that potentially are correlated, we decide to further process our data by doing feature reduction using correlation. We calculate the correlation between the features, and apply a threshold of 0.7. Whenever there are two features that have a correlation higher than 0.7, we delete one of the features from the dataset. After feature reduction, we reduce the number of features from 7772 to 4461.
+#### Step 1. Matrix Correlation
+After matrix correlation, we reduce the number of features from 7772 to 4461.
 #### Step 2. PCA
-To apply the PCA algorithm, the first thing we want to do is to standardize the data to the same scale because some columns have bigger numbers, like the budget and gross earning columns. Those numbers are in the millions, while other columns are represented by binary numbers like 0 or 1. After data standardization, we run the PCA algorithm and transform the data into fewer dimensions. We chose the first 1985 principal components because they represent a total of about 70% of the cumulative variance explained, and each component has a variance bigger than 1. So we reduced the number of features from 4461 to 1985. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:<br />
+After applying PCA to the dataset, we chose the first 1985 principal components because they represent a total of about 70% of the cumulative variance explained, and each component has a variance bigger than 1. As a result, we reduced the number of features from 4461 to 1985. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:<br />
 <br />
 <img src="pca-1.png" width = "650cm"><br />
 <br />
@@ -65,7 +79,6 @@ However, when we compute the silhouette scores from 20 to 55 clusters, all of th
 <br />
 <img src="gmm-2.png" width = "650cm"><br />
 <br />
-# Results
 
 # Discussion
  
