@@ -85,7 +85,8 @@ However, when we compute the silhouette scores from 20 to 55 clusters, all of th
 <br />
 
 # Discussion
- 
+ We find out that both KMeans and GMM do not perform well on our dataset based on our results. The main reason is that our dataset has high dimensionality because we expand categorical features into multiple boolean features. For example, we have a column called 'isAmerica,' which only contains the binary number 0 and 1. This process will shorten the distance of many data points, thus becoming hard to cluster data, which is what unsupervised learning is trying to do. In other words, this would cause data overlapping. Lots of overlap will lead to a non-ideal result, as we have seen in the result section. In order to solve it, labels are required. If we label those data, we are able to recognize them easily and train them using other algorithms. Even if labeling data points would take a long time, it will increase the result's accuracy. Therefore, we believe that supervised learning algorithms would give us a better outcome instead of unsupervised learning.
+ <br />
 
 # References
 1. Muhammad Hassan Latif, Hammad Afzal, “Prediction of Movies popularity Using Machine Learning Techniques”, IJCSNS International Journal of Computer Science and Network Security, VOL.16 No.8, August 2016 <br />
