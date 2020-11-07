@@ -81,11 +81,11 @@ At last we applied Gaussian Mixture Models to cluster our principal components. 
 <br />
 We then visualize the clustering result of 39 clusters from 2D scatter plots that display only two features of a datapoint in each cluster . The following scatter plots show the clusters reduced to two different features respectively: budget to score, runtime to score, and votes to score: 
 <br />
-<img src="budget v score.png" width = "650cm"><br />
+<img src="budget v score.png" width = "650cm" height="500cm"><br />
 <br />
-<img src="runtime v score.png" width = "650cm"><br />
+<img src="runtime v score.png" width = "650cm" height="500cm"><br />
 <br />
-<img src="votes v score.png" width = "650cm"><br />
+<img src="votes v score.png" width = "650cm" height="500cm"><br />
 <br />
 Since budget has the lowest correlation to score, runtime has the second lowest, and votes have the highest, the 2D scatter plots become more skewed and show a clearer curve. This is because higher correlation means the relationship between two variables are stronger. However, there are many overlapping cases because of reduced dimensionality, possibly also due to the fact that clustering algorithms do not perform well on datasets with many features.
 
