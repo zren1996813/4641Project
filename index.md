@@ -88,6 +88,7 @@ We then visualize the clustering result of 39 clusters from 2D scatter plots tha
 <img src="votes v score.png" width = "650cm"><br />
 <br />
 Since budget has the lowest correlation to score, runtime has the second lowest, and votes have the highest, the 2D scatter plots become more skewed and show a clearer curve. This is because higher correlation means the relationship between two variables are stronger. However, there are many overlapping cases because of reduced dimensionality, possibly also due to the fact that clustering algorithms do not perform well on datasets with many features.
+
 <br />
 To verify this, we compute the silhouette scores from 20 to 55 clusters, all of them are less than 0.03, which means that there are overlapping clusters and even wrong assignments in some cases. So we decided GMM does not perform well in predicting scores of movies. And unsupervised learning cannot cluster well due to high dimensionality of our data. 
 <br />
