@@ -99,7 +99,7 @@ To hyperparameter tuning, we used six random forests with different depths and n
 <img src="rf2.png" width = "1000cm" height="500cm"><br />
 
 
-After comparison, we found out that the more estimators and max_depth we applied, the higher accuracy we got. It makes sense because n_estimator is the number of subtrees. More subtrees will give us better performance, thus enhancing accuracy and making our prediction stronger and more stable. As the diagram is shown above, when we increase the n_estimator, the accuracy increases. So is the max_depth. The deeper each decision tree is, the higher accuracy we can obtain since we make the analysis more specific. 
+After comparison, we found out that the more estimators and max_depth we applied, the higher accuracy we got. It makes sense because n_estimator is the number of subtrees. More subtrees will give us better performance, thus enhancing accuracy and making our prediction stronger and more stable. As the diagram is shown above, when we increase the n_estimator, the accuracy increases. So is the max_depth. The deeper each decision tree is, the higher accuracy we can obtain since we make each decision tree more specific. 
 
 F1 score is a harmonic mean of recall and precision. It tends to favor classifiers that are strong in both precision and recall, rather than classifiers that emphasize one at the cost of the other. After we placed six different hyperparameters, we got six different F1 scores. By comparing the value, those numbers are reasonable since they are all a little higher than the accuracy, which implies that all recall values are decent. 
 
