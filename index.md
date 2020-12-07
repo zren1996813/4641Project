@@ -50,7 +50,7 @@ After applying PCA to the dataset, we chose the first 9 principal components bec
 <br />
 
 ### K-Means:
-We prefer to predict the score of 4.5 to 10, and each cluster represents 1.67 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 32. <br />
+We prefer to predict the score of 4.5 to 10, and each cluster represents 0.3125 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 32. <br />
 <br />
 <img src="kmeans-1.png" width = "650cm"><br />
 <br />
