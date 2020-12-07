@@ -62,7 +62,7 @@ Because 32 is the optimal cluster, we visualize the silhouette score between 31 
 <br />
 <img src="kmeans4.png" width = "800cm"  height = "550cm"><br />
 <br />
-The silhouette score is always below 0.14 Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
+The silhouette score is always below 0.45 Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
 <br />
 <img src="kmeans-5.png" width = "1000cm"><br />
 <br />
