@@ -40,7 +40,7 @@ This is the heatmap for the correlation matrix for the original 14 features.
 <br />
 <img src="heatmap.png" width = "650cm"><br />
 
-After expanding the features and doing the matrix correlation, we reduce the number of features from 7772 to 4461.
+After plotting the heatmap, we found that there were no siginifcant correlation between any two features. As a result, we decided to not reduce any features from the results of the correlation matrix.
 #### Step 2. PCA
 After applying PCA to the dataset, we chose the first 1985 principal components because they represent a total of about 70% of the cumulative variance explained, and each component has a variance bigger than 1. As a result, we reduced the number of features from 4461 to 1985. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:<br />
 <br />
