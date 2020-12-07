@@ -54,7 +54,7 @@ We prefer to predict the score of 4.5 to 10, and each cluster represents 1.67 sc
 <br />
 <img src="kmeans-1.png" width = "650cm"><br />
 <br />
-However, when we compute the silhouette score between 30 to 40, the score is always below 0.03. 
+However, when we compute the silhouette score between 30 to 40, the score is always below 0.14. 
 <br />
 <img src="kmean-3.png" width = "900cm"><br />
 <br />
@@ -62,7 +62,7 @@ Because 32 is the optimal cluster, we visualize the silhouette score between 31 
 <br />
 <img src="kmeans4.png" width = "800cm"  height = "550cm"><br />
 <br />
-The silhouette score is always below 0.03 Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
+The silhouette score is always below 0.14 Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
 <br />
 <img src="kmeans-5.png" width = "1000cm"><br />
 <br />
