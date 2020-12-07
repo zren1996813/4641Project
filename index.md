@@ -123,7 +123,7 @@ Below is a table that shows the precision, recall, and F1 score for all four cla
 The above table can be visualized by plotting a confusion matrix that has four classes from integers 5 to 8. This is the range where our SVM prediction model falls in after we changed those predictions, which have absolute differences smaller than one from the ground truths, to the values of the ground truths in order to have a larger tolerance for errors.
 
 <br />
-<img src="confusion matrix.png" width = "1000cm" height="500cm"><br />
+<img src="confusion matrix.png" width = "400cm" height="500cm"><br />
 
 From the plot, we can see that predictions with a score of 5 and 6 are the most precise, with 5 and 7 having the largest recall. And classes 5 and 7 have the highest F1 score with almost 100%. However, class 6 has the second lowest precision as a lot of data points with a score of 8 are being falsely predicted as having a score of 6. Moreover, 3 data points with a score of 6 are falsely predicted as having a score of 8. This is probably due to the fact that there are much fewer data points with a score of 8, thus the training is less complete and is prone to have both false negatives and false positives.
 
