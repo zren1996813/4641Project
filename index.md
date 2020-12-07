@@ -7,7 +7,6 @@ With the techniques and knowledge we learned from the class, including data proc
 
 
 # Methods
-## Part 1. Data Processing
 ### Data Preprocessing:
 
 The set of data we are using contains 14 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy.
@@ -28,6 +27,7 @@ We also want to apply K-Means algorithm and GMM algorithm to do our unsupervised
 We applied SVM algorithm and Random Forest algorithm to do our supervised learning by using one-hot encoded data.
 
 # Results
+## Part 1. Data Processing
 ### Data Preprocessing:
 
 After deleting the data points with 0 budget or 0 gross, we have a set of data with 14 features and 4635 data points. After the replacement of features from categorical features to boolean features, we expand our dataset from 14 features to 3305 features.
