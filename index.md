@@ -92,6 +92,9 @@ To verify this, we compute the silhouette scores from 20 to 55 clusters, all of 
 <br />
 
 ## Part 3. Supervised Learning
+### Data Seperation:
+For analysis purpose, we seperated the dataset into two groups: training data and testing data. 80% of the original data points are used for training, while the rest 20% are used for testing. 
+
 ### Random Forest:
 To hyperparameter tuning, we used six random forests with different depths and numbers of estimators. The following tables represent the accuracy and F-1 score of each random forest. 
 
