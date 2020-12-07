@@ -58,7 +58,7 @@ However, when we compute the silhouette score between 30 to 40, the score is alw
 <br />
 <img src="kmean-3.png" width = "500cm"><br />
 <br />
-Because 32 is the optimal cluster, we visualize the silhouette score between 31 to 35. since the silhouette coefficient value is the x axis, and y is the cluster label.
+Because 32 is the optimal cluster, we visualize the silhouette score between 31 to 35. To label the following graph, x-axis represents the silhouette coefficient value, and y-axis represents the cluster label.
 <br />
 <img src="kmeans4.png" width = "800cm"  height = "550cm"><br />
 <br />
