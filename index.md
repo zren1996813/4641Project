@@ -98,9 +98,9 @@ To verify this, we compute the silhouette scores from 20 to 55 clusters, all of 
 To hyperparameter tuning, we used six random forests with different depths and numbers of estimators. The following tables represent the accuracy and F-1 score of each random forest. 
 
 <br />
-<img src="rf1.png" width = "650cm" height="250cm"><br />
+<img src="rf1.png" width = "850cm" height="350cm"><br />
 <br />
-<img src="rf2.png" width = "650cm" height="250cm"><br />
+<img src="rf2.png" width = "850cm" height="500cm"><br />
 
 
 After comparison, we found out that the more estimators and max_depth we applied, the higher accuracy we got. It makes sense because n_estimator is the number of subtrees. More subtrees will give us better performance, thus enhancing accuracy and making our prediction stronger and more stable. As the diagram is shown above, when we increase the n_estimator, the accuracy increases. So is the max_depth. The deeper each decision tree is, the higher accuracy we can obtain since we make the analysis more specific. 
