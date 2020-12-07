@@ -56,7 +56,7 @@ We prefer to predict the score of 4.5 to 10, and each cluster represents 1.67 sc
 <br />
 However, when we compute the silhouette score between 30 to 40, the score is always below 0.14. 
 <br />
-<img src="kmean-3.png" width = "900cm"><br />
+<img src="kmean-3.png" width = "600cm"><br />
 <br />
 Because 32 is the optimal cluster, we visualize the silhouette score between 31 to 35. since the silhouette coefficient value is the x axis, and y is the cluster label.
 <br />
