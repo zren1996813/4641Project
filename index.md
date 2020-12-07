@@ -7,6 +7,7 @@ With the techniques and knowledge we learned from the class, including data proc
 
 
 # Methods
+## Part 1. Data Processing
 ### Data Preprocessing:
 
 The set of data we are using contains 14 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy.
@@ -49,6 +50,7 @@ After applying PCA to the dataset, we chose the first 9 principal components bec
 <img src="pca-3.png" width = "650cm"><br />
 <br />
 
+## Part 2. Unsupervised Learning
 ### K-Means:
 We prefer to predict the score of 4.5 to 10, and each cluster represents 0.3125 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 32. <br />
 <br />
@@ -89,7 +91,7 @@ To verify this, we compute the silhouette scores from 20 to 55 clusters, all of 
 <img src="gmm-2.png" width = "650cm"><br />
 <br />
 
-
+## Part 3. Supervised Learning
 ### Random Forest:
 To hyperparameter tuning, we used six random forests with different depths and numbers of estimators. The following tables represent the accuracy and F-1 score of each random forest. 
 
