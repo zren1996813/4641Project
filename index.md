@@ -50,19 +50,15 @@ After applying PCA to the dataset, we chose the first 9 principal components bec
 <br />
 
 ### K-Means:
-We prefer to predict the score of 4.5 to 10, and each cluster represents 1.67 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 6. <br />
+We prefer to predict the score of 4.5 to 10, and each cluster represents 1.67 score. After I apply the K Means algorithm to cluster our principal components, we evaluate the performance of Kmean from 2 to 100 clusters. As you can see in the elbow figure below, the optimal k means is 32. <br />
 <br />
 <img src="kmeans-1.png" width = "650cm"><br />
 <br />
-In order to see the diagram clearly, we decrease the range to (2,10). Apparently, The optimal cluster should be 6 which is the arm of the diagram.<br />
-<br />
-<img src="kmean-2.png" width = "650cm"><br />
-<br />
-However, when we compute the silhouette score between 2 to 10, the score is always below 0.03. 
+However, when we compute the silhouette score between 30 to 40, the score is always below 0.03. 
 <br />
 <img src="kmean-3.png" width = "900cm"><br />
 <br />
-Because 6 is the optimal cluster, we visualize the silhouette score between 4 to 8. since the silhouette coefficient value is the x axis, and y is the cluster label.
+Because 32 is the optimal cluster, we visualize the silhouette score between 31 to 35. since the silhouette coefficient value is the x axis, and y is the cluster label.
 <br />
 <img src="kmeans4.png" width = "800cm"  height = "550cm"><br />
 <br />
@@ -70,7 +66,7 @@ The silhouette score is always below 0.03 Actually, the low silhouette score ind
 <br />
 <img src="kmeans-5.png" width = "1000cm"><br />
 <br />
-We apply the optimal cluster 6 into the diagram. Unlucky, there are many clusters overlapped, the center of the clusters is pretty close to each other. The predicted score is far away the center. In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other and the accuracy is really low. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
+We apply the optimal cluster 32 into the diagram. Unlucky, there are many clusters overlapped, the center of the clusters is pretty close to each other and the all points in the cluster is dispersed.In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other and the accuracy is really low. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
 
 ### GMM:
 At last we applied Gaussian Mixture Models to cluster our principal components. Since the score variable that we are trying to predict lies between 4.5 to 10, we decided to evaluate the performance of GMM from 20 to 55 clusters. We hope that each of the 55 clusters would capture 0.1 range of the score. We determined that the best number of clusters would be 35, which is the joint lowest point of both Akaike information criterion and bayes information criterion.
