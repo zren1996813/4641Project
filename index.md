@@ -40,7 +40,7 @@ This is the heatmap for the correlation matrix for the original 14 features.
 
 After plotting the heatmap, we found that the only two features that had a high correlation was the writer and the year. However, we believed that the high correlation between these two features was understable since most writers were only active for several years, and we decided to not eliminate any features based on the result of correlation matrix.
 #### Step 2. PCA
-After applying PCA to the dataset, we chose the first 1985 principal components because they represent a total of about 70% of the cumulative variance explained, and each component has a variance bigger than 1. As a result, we reduced the number of features from 4461 to 1985. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:<br />
+After applying PCA to the dataset, we chose the first 9 principal components because they represent a total of about 90% of the cumulative variance explained, and each component has a variance bigger than 1. As a result, we reduced the number of features from 14 to 9. The following unsupervised learning algorithms are based on this reduced dataset. Below are the results:<br />
 <br />
 <img src="pca-1.png" width = "650cm"><br />
 <br />
@@ -92,6 +92,27 @@ To verify this, we compute the silhouette scores from 20 to 55 clusters, all of 
 <br />
 <img src="gmm-2.png" width = "650cm"><br />
 <br />
+
+
+### Random Forest:
+To hyperparameter tuning, we used six random forests with different depths and numbers of estimators. The following tables represent the accuracy and F-1 score of each random forest. 
+
+<br />
+<img src="rf1.png" width = "650cm" height="400cm"><br />
+<br />
+<img src="rf2.png" width = "650cm" height="400cm"><br />
+
+
+After comparison, we found out that the more estimators and max_depth we applied, the higher accuracy we got. It makes sense because n_estimator is the number of subtrees. More subtrees will give us better performance, thus enhancing accuracy and making our prediction stronger and more stable. As the diagram is shown above, when we increase the n_estimator, the accuracy increases. So is the max_depth. The deeper each decision tree is, the higher accuracy we can obtain since we make the analysis more specific. 
+
+F1 score is a harmonic mean of recall and precision. It tends to favor classifiers that are strong in both precision and recall, rather than classifiers that emphasize one at the cost of the other. After we placed six different hyperparameters, we got six different F1 scores. By comparing the value, those numbers are reasonable since they are all a little higher than the accuracy, which implies that all recall values are decent. 
+
+Therefore, we decided to use n_estimators =  100 and max_depth= 50 as our random forest moving forward. The accuracy of this random forest is 98.3%. 
+
+To better visualize the data, we built a confusion matrix as follows:
+<br />
+<img src="rf3.png" width = "650cm" height="400cm"><br />
+We can tell that most of the predicted data fall into the right true data category from this confusion matrix. We also noticed that Group 3, 4, 5 has the most data. That makes sense because most of the scores of movies in our database are from 5.0 - 6.0, 6.0-7.0, 7.0-8.0. 
 
 # Discussion
  We find out that both KMeans and GMM do not perform well on our dataset based on our results. The main reason is that our dataset has high dimensionality because we expand categorical features into multiple boolean features. For example, we have a column called 'isAmerica,' which only contains the binary number 0 and 1. This process will shorten the distance of many data points, thus becoming hard to cluster data, which is what unsupervised learning is trying to do. In other words, this would cause data overlapping. Lots of overlap will lead to a non-ideal result, as we have seen in the result section. In order to solve it, labels are required. If we label those data, we are able to recognize them easily and train them using other algorithms. Even if labeling data points would take a long time, it will increase the result's accuracy. Therefore, we believe that supervised learning algorithms would give us a better outcome instead of unsupervised learning.
