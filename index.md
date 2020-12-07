@@ -9,7 +9,7 @@ With the techniques and knowledge we learned from the class, including data proc
 # Methods
 ### Data Preprocessing:
 
-The set of data we are using contains 13 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy.
+The set of data we are using contains 14 features and 6820 data points. We first remove the data points that have either 0 budget or 0 gross since we believe budget and gross are the two most important features in our machine learning process, and data points with 0 budget or 0 gross could potentially cause inaccuracy.
 
 We also notice that there are several categorical features in our dataset, and they are hard to comply with, so we decide to expand categorical features using two encoding methods. For unsupervised learning algorithms, we used Ordinal Encoding so that each unique category value is assigned an integer value while the number of features remains the same. We used One-hot Encoding for supervised learning to expand each column into multiple boolean features for better prediction results. For example, the feature “country” with different values like “U.S, France” is separated into several new boolean features representing if the movie is made in the U.S or if the movie is made in France. After expandation, we got 3305 features. 
 
