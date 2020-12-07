@@ -64,7 +64,7 @@ Because 32 is the optimal cluster, we visualize the silhouette score between 31 
 <br />
 The silhouette score is always below 0.45 Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
 <br />
-<img src="kmeans-5.png" width = "1000cm"><br />
+<img src="kmeans-5.png" width = "600cm"><br />
 <br />
 We apply the optimal cluster 32 into the diagram. Unlucky, there are many clusters overlapped, the center of the clusters is pretty close to each other and the all points in the cluster is dispersed.In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other and the accuracy is really low. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
 
