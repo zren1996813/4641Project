@@ -62,11 +62,11 @@ Because 32 is the optimal cluster, we visualize the silhouette score between 31 
 <br />
 <img src="kmeans4.png" width = "800cm"  height = "550cm"><br />
 <br />
-The silhouette score is always below 0.45 Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
+The silhouette score is always below 0.45. Actually, the low silhouette score indicates there are overlapping clusters and even wrong assignments in some cases. To visualize it, the diagram is as follows:
 <br />
 <img src="kmeans-5.png" width = "600cm"><br />
 <br />
-We apply the optimal cluster 32 into the diagram. Unlucky, there are many clusters overlapped, the center of the clusters is pretty close to each other and the all points in the cluster is dispersed.In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other and the accuracy is really low. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
+We apply the optimal cluster 32 into the diagram. Unfortunately, there are many clusters overlapped, the center of the clusters is pretty close to each other and the all points in the cluster is dispersed.In other words, it’s hard to distinguish these clusters since each cluster should keep far away from each other and the accuracy is really low. Thus, based on the evaluation above, k means does not perform well in predicting scores of movies.
 
 ### GMM:
 At last we applied Gaussian Mixture Models to cluster our principal components. Since the score variable that we are trying to predict lies between 4.5 to 10, we decided to evaluate the performance of GMM from 20 to 55 clusters. We hope that each of the 55 clusters would capture 0.1 range of the score. We determined that the best number of clusters would be 35, which is the joint lowest point of both Akaike information criterion and bayes information criterion.
