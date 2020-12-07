@@ -29,7 +29,7 @@ We applied SVM algorithm and Random Forest algorithm to do our supervised learni
 # Results
 ### Data Preprocessing:
 
-After deleting the data points with 0 budget or 0 gross, we have a set of data with 14 features and 4635 data points. After the replacement of features from categorical features to boolean features, we expand our dataset from 14 features to 7772 features.
+After deleting the data points with 0 budget or 0 gross, we have a set of data with 14 features and 4635 data points. After the replacement of features from categorical features to boolean features, we expand our dataset from 14 features to 3305 features.
 
 ### Feature Reduction:
 
