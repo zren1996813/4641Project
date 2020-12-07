@@ -111,7 +111,7 @@ Therefore, we decided to use n_estimators =  100 and max_depth= 50 as our random
 
 To better visualize the data, we built a confusion matrix as follows:
 <br />
-<img src="rf3.png" width = "650cm" height="650cm"><br />
+<img src="rf3.png" width = "500cm" height="500cm"><br />
 We can tell that most of the predicted data fall into the right true data category from this confusion matrix. We also noticed that Group 3, 4, 5 has the most data. That makes sense because most of the scores of movies in our database are from 5.0 - 6.0, 6.0-7.0, 7.0-8.0. 
 
 # Discussion
